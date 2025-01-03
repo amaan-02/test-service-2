@@ -1,0 +1,46 @@
+apiVersion: transformers.customplugin.co/v1
+kind: SkyUAppTransformer
+metadata:
+  name: skyu-deployment
+  annotations:
+    config.kubernetes.io/function: |
+      exec:
+        path: skyu-app-transformer
+spec:
+  applicationContainers:
+    - imageTag: latest
+      cpuRequestMili: 100
+      cpuLimitMili: 150
+      memoryRequestMb: 350
+      memoryLimitMb: 450
+      args: []
+      command: []
+      configMounts: []
+      applicationPorts: []
+      healthChecks: []
+      name: ai-suggested-solution-qa-main
+      imagePullPolicy: Always
+      imageRegistry: docker.io/ai-suggested-solution-qa
+      imagePullSecretName: imagepull-docker
+      credentialId: credential_31b219a6-012c-49aa-bc5e-9c2e397e39d8
+  minReplicas: 1
+  maxReplicas: 1
+  terminationGracePeriodSeconds: 60
+  nodeSelector: {}
+  suspend: false
+  ttlSecondsAfterFinished: 0
+  labels:
+    app: ai-suggested-solution-qa
+    version: v1.0.0
+    applicationId: app_03d98cf0-8b2e-4b86-aba0-f6b794ed2a27
+    projectId: project_d2301adc-5288-4026-aaad-fcb3e1d34293
+    organizationId: org_6de1b366-9da6-4d55-b363-f5a2c4382016
+    environmentId: env_dc884329-aad6-489b-bc0b-b26ff4bf3afd
+    environmentName: staging
+  horizontalAutoScalingRules: []
+  volumes: []
+  type: Deployment
+  name: ai-suggested-solution-qa
+  serviceType: ClusterIP
+  version: v1.0.0
+  namespace: skyu-automation-staging

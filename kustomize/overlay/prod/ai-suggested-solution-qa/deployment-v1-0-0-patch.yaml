@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-suggested-solution-qa-v1-0-0
+  labels:
+    app: ai-suggested-solution-qa-v1-0-0
+    applicationId: app_03d98cf0-8b2e-4b86-aba0-f6b794ed2a27
+    version: v1.0.0
+    organizationId: org_6de1b366-9da6-4d55-b363-f5a2c4382016
+    projectId: project_d2301adc-5288-4026-aaad-fcb3e1d34293
+    environmentId: env_76c3315f-6a7a-4427-8ab3-271925e8cb8c
+  annotations:
+    reloader.stakater.com/auto: 'true'
+spec:
+  selector:
+    matchLabels:
+      app: ai-suggested-solution-qa-v1-0-0
+  template:
+    metadata:
+      labels:
+        app: ai-suggested-solution-qa-v1-0-0
+        applicationId: app_03d98cf0-8b2e-4b86-aba0-f6b794ed2a27
+        version: v1.0.0
+        organizationId: org_6de1b366-9da6-4d55-b363-f5a2c4382016
+        projectId: project_d2301adc-5288-4026-aaad-fcb3e1d34293
+        environmentId: env_76c3315f-6a7a-4427-8ab3-271925e8cb8c
