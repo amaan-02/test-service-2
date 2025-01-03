@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations: {}
+  labels:
+    app: ai-default-v1-0-0
+    applicationId: app_82e7bcfd-262a-4575-861c-6308107d613a
+    version: v1.0.0
+    organizationId: org_6de1b366-9da6-4d55-b363-f5a2c4382016
+    projectId: project_d2301adc-5288-4026-aaad-fcb3e1d34293
+  name: ai-default-v1-0-0
+spec:
+  selector:
+    app: ai-default-v1-0-0
