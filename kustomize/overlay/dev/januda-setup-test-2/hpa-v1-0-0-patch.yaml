@@ -1,0 +1,17 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  annotations: {}
+  name: januda-setup-test-2-v1-0-0
+  labels:
+    app: januda-setup-test-2-v1-0-0
+    applicationId: app_fe5e04d1-3f7d-4b97-8964-834b817d3552
+    version: v1.0.0
+    organizationId: org_6de1b366-9da6-4d55-b363-f5a2c4382016
+    projectId: project_d2301adc-5288-4026-aaad-fcb3e1d34293
+    environmentId: env_10a07433-b2fc-4eea-8e8e-c2182b8cdf05
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: januda-setup-test-2-v1-0-0
