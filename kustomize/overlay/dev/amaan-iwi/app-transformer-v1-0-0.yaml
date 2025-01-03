@@ -8,7 +8,7 @@ metadata:
         path: skyu-app-transformer
 spec:
   applicationContainers:
-    - imageTag: latest
+    - imageTag: c30682b7a0f4a34eda3b8154d43e1d30df9a522f
       cpuRequestMili: 100
       cpuLimitMili: 150
       memoryRequestMb: 350
@@ -20,9 +20,15 @@ spec:
       healthChecks: []
       name: amaan-iwi-main
       imagePullPolicy: Always
-      imageRegistry: docker.io/amaan-iwi
+      imageRegistry: docker.io/amaan02/amaan-iwi
       imagePullSecretName: imagepull-docker
       credentialId: credential_31b219a6-012c-49aa-bc5e-9c2e397e39d8
+      commitDetails:
+        commitHash: c30682b7a0f4a34eda3b8154d43e1d30df9a522f
+        commitAvatar: https://github.com/.png
+        commitTime: ''
+        commitMessage: ''
+        commitUser: ''
   minReplicas: 1
   maxReplicas: 1
   terminationGracePeriodSeconds: 60
