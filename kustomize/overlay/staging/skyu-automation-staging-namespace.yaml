@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: skyu-automation-staging
+  labels:
+    environmentId: env_dc884329-aad6-489b-bc0b-b26ff4bf3afd
+    projectId: project_d2301adc-5288-4026-aaad-fcb3e1d34293
+    projectName: skyu-qa-automation
+    environmentName: staging
+    organizationId: org_6de1b366-9da6-4d55-b363-f5a2c4382016
