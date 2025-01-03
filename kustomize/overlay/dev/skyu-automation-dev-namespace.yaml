@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: skyu-automation-dev
+  labels:
+    environmentId: env_10a07433-b2fc-4eea-8e8e-c2182b8cdf05
+    projectId: project_d2301adc-5288-4026-aaad-fcb3e1d34293
+    projectName: skyu-qa-automation
+    environmentName: dev
+    organizationId: org_6de1b366-9da6-4d55-b363-f5a2c4382016
