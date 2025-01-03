@@ -1,0 +1,46 @@
+apiVersion: transformers.customplugin.co/v1
+kind: SkyUAppTransformer
+metadata:
+  name: skyu-deployment
+  annotations:
+    config.kubernetes.io/function: |
+      exec:
+        path: skyu-app-transformer
+spec:
+  applicationContainers:
+    - imageTag: latest
+      cpuRequestMili: 100
+      cpuLimitMili: 150
+      memoryRequestMb: 350
+      memoryLimitMb: 450
+      args: []
+      command: []
+      configMounts: []
+      applicationPorts: []
+      healthChecks: []
+      name: amaan-iwi-main
+      imagePullPolicy: Always
+      imageRegistry: docker.io/amaan-iwi
+      imagePullSecretName: imagepull-docker
+      credentialId: credential_31b219a6-012c-49aa-bc5e-9c2e397e39d8
+  minReplicas: 1
+  maxReplicas: 1
+  terminationGracePeriodSeconds: 60
+  nodeSelector: {}
+  suspend: false
+  ttlSecondsAfterFinished: 0
+  labels:
+    app: amaan-iwi
+    version: v1.0.0
+    applicationId: app_f2ea96f1-663d-48e7-80c3-786640b1e57b
+    projectId: project_d2301adc-5288-4026-aaad-fcb3e1d34293
+    organizationId: org_6de1b366-9da6-4d55-b363-f5a2c4382016
+    environmentId: env_dc884329-aad6-489b-bc0b-b26ff4bf3afd
+    environmentName: staging
+  horizontalAutoScalingRules: []
+  volumes: []
+  type: Deployment
+  name: amaan-iwi
+  serviceType: ClusterIP
+  version: v1.0.0
+  namespace: skyu-automation-staging

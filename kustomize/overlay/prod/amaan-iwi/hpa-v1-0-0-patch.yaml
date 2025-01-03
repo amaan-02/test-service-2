@@ -1,0 +1,17 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  annotations: {}
+  name: amaan-iwi-v1-0-0
+  labels:
+    app: amaan-iwi-v1-0-0
+    applicationId: app_f2ea96f1-663d-48e7-80c3-786640b1e57b
+    version: v1.0.0
+    organizationId: org_6de1b366-9da6-4d55-b363-f5a2c4382016
+    projectId: project_d2301adc-5288-4026-aaad-fcb3e1d34293
+    environmentId: env_76c3315f-6a7a-4427-8ab3-271925e8cb8c
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: amaan-iwi-v1-0-0
