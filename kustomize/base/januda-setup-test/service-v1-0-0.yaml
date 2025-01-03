@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations: {}
+  labels:
+    app: januda-setup-test-v1-0-0
+    applicationId: app_340dfe80-ce6a-41df-ab42-cbb73a3f8439
+    version: v1.0.0
+    organizationId: org_6de1b366-9da6-4d55-b363-f5a2c4382016
+    projectId: project_d2301adc-5288-4026-aaad-fcb3e1d34293
+  name: januda-setup-test-v1-0-0
+spec:
+  selector:
+    app: januda-setup-test-v1-0-0
