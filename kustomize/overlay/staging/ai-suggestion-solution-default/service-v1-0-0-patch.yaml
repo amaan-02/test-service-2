@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations: {}
+  labels:
+    app: ai-suggestion-solution-default-v1-0-0
+    applicationId: app_4ed89fe7-11d9-4c47-9a11-25150868b6f1
+    version: v1.0.0
+    organizationId: org_6de1b366-9da6-4d55-b363-f5a2c4382016
+    projectId: project_d2301adc-5288-4026-aaad-fcb3e1d34293
+    environmentId: env_dc884329-aad6-489b-bc0b-b26ff4bf3afd
+  name: ai-suggestion-solution-default-v1-0-0
+spec:
+  selector:
+    app: ai-suggestion-solution-default-v1-0-0

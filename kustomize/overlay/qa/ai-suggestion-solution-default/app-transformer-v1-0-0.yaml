@@ -1,0 +1,46 @@
+apiVersion: transformers.customplugin.co/v1
+kind: SkyUAppTransformer
+metadata:
+  name: skyu-deployment
+  annotations:
+    config.kubernetes.io/function: |
+      exec:
+        path: skyu-app-transformer
+spec:
+  applicationContainers:
+    - imageTag: latest
+      cpuRequestMili: 100
+      cpuLimitMili: 150
+      memoryRequestMb: 350
+      memoryLimitMb: 450
+      args: []
+      command: []
+      configMounts: []
+      applicationPorts: []
+      healthChecks: []
+      name: ai-suggestion-solution-default-main
+      imagePullPolicy: Always
+      imageRegistry: docker.io/ai-suggestion-solution-default
+      imagePullSecretName: imagepull-docker
+      credentialId: credential_31b219a6-012c-49aa-bc5e-9c2e397e39d8
+  minReplicas: 1
+  maxReplicas: 1
+  terminationGracePeriodSeconds: 60
+  nodeSelector: {}
+  suspend: false
+  ttlSecondsAfterFinished: 0
+  labels:
+    app: ai-suggestion-solution-default
+    version: v1.0.0
+    applicationId: app_4ed89fe7-11d9-4c47-9a11-25150868b6f1
+    projectId: project_d2301adc-5288-4026-aaad-fcb3e1d34293
+    organizationId: org_6de1b366-9da6-4d55-b363-f5a2c4382016
+    environmentId: env_5416bc69-ed2e-46e7-9a62-8f34e65bdcf4
+    environmentName: qa
+  horizontalAutoScalingRules: []
+  volumes: []
+  type: Deployment
+  name: ai-suggestion-solution-default
+  serviceType: ClusterIP
+  version: v1.0.0
+  namespace: skyu-automation-qa
