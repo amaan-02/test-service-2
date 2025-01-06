@@ -4,7 +4,7 @@ name: >-
 'on':
   workflow_dispatch: {}
   repository_dispatch:
-    types: pipeline_c4bf0ef8-7ac1-48b8-a8f7-5861e0eb41b9
+    types: pipeline_c30b7908-f16f-4270-8234-0baf7e0a1577
 env:
   ENCODED_PIPELINE_SECRET: >-
     ${{secrets.TESTSERVICE2_AISUGGESTEDSOLUTION_PRAIDEV_APP_926E7FB_ENV_0B5E21B}}
