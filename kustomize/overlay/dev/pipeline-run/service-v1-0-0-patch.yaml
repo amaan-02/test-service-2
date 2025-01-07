@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations: {}
+  labels:
+    app: pipeline-run-v1-0-0
+    applicationId: app_1e5a87e7-7fb4-4893-92cc-4c0fe35cc578
+    version: v1.0.0
+    organizationId: org_6de1b366-9da6-4d55-b363-f5a2c4382016
+    projectId: project_4de093d2-9758-48e4-b22f-03a8294991ab
+    environmentId: env_755b27a9-f0ca-48e7-840d-5a792dc4e5b0
+  name: pipeline-run-v1-0-0
+spec:
+  selector:
+    app: pipeline-run-v1-0-0

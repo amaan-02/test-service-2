@@ -1,0 +1,46 @@
+apiVersion: transformers.customplugin.co/v1
+kind: SkyUAppTransformer
+metadata:
+  name: skyu-deployment
+  annotations:
+    config.kubernetes.io/function: |
+      exec:
+        path: skyu-app-transformer
+spec:
+  applicationContainers:
+    - imageTag: latest
+      cpuRequestMili: 100
+      cpuLimitMili: 150
+      memoryRequestMb: 350
+      memoryLimitMb: 450
+      args: []
+      command: []
+      configMounts: []
+      applicationPorts: []
+      healthChecks: []
+      name: pipeline-run-main
+      imagePullPolicy: Always
+      imageRegistry: docker.io/amaan02/pipeline-run
+      imagePullSecretName: imagepull-docker
+      credentialId: credential_c58a7f7e-bc53-4df0-874a-ee901eea38c3
+  minReplicas: 1
+  maxReplicas: 1
+  terminationGracePeriodSeconds: 60
+  nodeSelector: {}
+  suspend: false
+  ttlSecondsAfterFinished: 0
+  labels:
+    app: pipeline-run
+    version: v1.0.0
+    applicationId: app_1e5a87e7-7fb4-4893-92cc-4c0fe35cc578
+    projectId: project_4de093d2-9758-48e4-b22f-03a8294991ab
+    organizationId: org_6de1b366-9da6-4d55-b363-f5a2c4382016
+    environmentId: env_720eb77e-9e04-483e-a542-528c4b3d96db
+    environmentName: prod
+  horizontalAutoScalingRules: []
+  volumes: []
+  type: Deployment
+  name: pipeline-run
+  serviceType: ClusterIP
+  version: v1.0.0
+  namespace: skyu-automation-qa-prod
