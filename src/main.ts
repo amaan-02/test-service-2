@@ -2,17 +2,16 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-
-import { description, name, version } from '../package.json';
-
-
+import * as packageJson from '../package.json';
 
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.useLogger(process.env.NODE_ENV !== 'production' ? ['debug'] : ['warn']);
+  app.useLogger(process.env.NODE_ENV !== 'production' ? 'debug' : 'warn');
   app.useGlobalPipes(new ValidationPipe());
   app.setGlobalPrefix('api/v1/pipeline');
+
+  const { description, name, version } = packageJson;
 
   const config = new DocumentBuilder()
     .setTitle(name)
