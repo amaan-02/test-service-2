@@ -258,7 +258,7 @@ jobs:
         uses: repo-sync/pull-request@v2
         with:
           source_branch: fix-issue-${{ github.run_id }}
-          destination_branch: ${{ github.repository_default_branch || 'main' }}
+          destination_branch: ${{ github.repository_default_branch }}
           pr_title: Fix Issue-${{ github.run_id }}
           pr_body: ${{ steps.send-file.outputs.ai_commit_message }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
