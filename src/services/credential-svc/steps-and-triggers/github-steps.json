@@ -1,5 +1,8 @@
 {
-  "START": { "name": "Start", "run": "echo \" Starting GitHub Action!\"" },
+  "START": {
+    "name": "Start",
+    "run": "echo \" Starting GitHub Action!\""
+  },
   "CHECKOUT": {
     "name": "Checkout repository",
     "uses": "actions/checkout@v2"
@@ -10,11 +13,11 @@
   },
   "TRIVY_SCAN": {
     "name": "Run Trivy vulnerability scanner",
-    "uses": "aquasecurity/trivy-action@master",
+    "uses": "aquasecurity/trivy-action@v2",
     "with": {
       "image-ref": "pipeline-svc:${{ github.sha }}",
       "format": "table",
-      "exit-code": "1",
+      "exit-code": 1,
       "ignore-unfixed": true,
       "vuln-type": "os,library",
       "severity": "CRITICAL"
