@@ -6,7 +6,7 @@ name: amplify-project_pr-basic-staging_app_1170854 Pipeline (Skyu Generated)
       - synchronize
   workflow_dispatch: {}
   repository_dispatch:
-    types: pipeline_b07cd451-0e83-485b-ab64-150f45f40f4a
+    types: pipeline_0690cfd5-96b1-49ea-9b7f-5d9f27b3aa2d
 env:
   ENCODED_PIPELINE_SECRET: ${{secrets.TESTSERVICE2_AMPLIFYPROJECT_PRBASICSTAGING_APP_1170854}}
   COMMIT_ID: ${{github.event.client_payload.commitId || github.sha || github.run_id}}
