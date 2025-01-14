@@ -1,0 +1,149 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: new-helm-qa-v1-0-0
+  namespace: skyu-automation-qa-dev
+  labels:
+    organizationId: org_6de1b366-9da6-4d55-b363-f5a2c4382016
+    projectId: project_4de093d2-9758-48e4-b22f-03a8294991ab
+    environmentId: env_755b27a9-f0ca-48e7-840d-5a792dc4e5b0
+    applicaitonId: app_91115f33-a4c9-437e-8434-946f83be0115
+spec:
+  interval: 5m0s
+  chart:
+    spec:
+      chart: src/common
+      sourceRef:
+        kind: GitRepository
+        name: new-helm-qa-v1-0-0
+        namespace: skyu-automation-qa-dev
+      valuesFiles:
+        - src/common
+  values: {}
+  postRenderers:
+    - kustomize:
+        patches:
+          - target:
+              group: apps
+              version: v1
+              kind: Deployment
+              name: new-helm-qa-v1-0-0
+            patch: |
+              - op: add
+                path: /spec/template/metadata/labels/organizationId
+                value: org_6de1b366-9da6-4d55-b363-f5a2c4382016
+              - op: add
+                path: /spec/template/metadata/labels/projectId
+                value: project_4de093d2-9758-48e4-b22f-03a8294991ab
+              - op: add
+                path: /spec/template/metadata/labels/applicationId
+                value: app_91115f33-a4c9-437e-8434-946f83be0115
+              - op: add
+                path: /spec/template/metadata/labels/environmentId
+                value: env_755b27a9-f0ca-48e7-840d-5a792dc4e5b0
+              - op: add
+                path: /spec/template/metadata/labels/version
+                value: v1.0.0
+          - target:
+              kind: >-
+                (Deployment|StatefulSet|DaemonSet|CronJob|Job|Pod|ConfigMap|Secret|Service|Ingress|PersistentVolumeClaim|Namespace|PersistentVolume|Service)
+            patch: |
+              - op: add
+                path: /metadata/labels/organizationId
+                value: org_6de1b366-9da6-4d55-b363-f5a2c4382016
+              - op: add
+                path: /metadata/labels/projectId
+                value: project_4de093d2-9758-48e4-b22f-03a8294991ab
+              - op: add
+                path: /metadata/labels/applicationId
+                value: app_91115f33-a4c9-437e-8434-946f83be0115
+              - op: add
+                path: /metadata/labels/environmentId
+                value: env_755b27a9-f0ca-48e7-840d-5a792dc4e5b0
+              - op: add
+                path: /metadata/labels/version
+                value: v1.0.0
+          - target:
+              group: batch
+              version: v1
+              kind: Job
+              name: new-helm-qa-v1-0-0
+            patch: |
+              - op: add
+                path: /spec/template/metadata/labels/organizationId
+                value: org_6de1b366-9da6-4d55-b363-f5a2c4382016
+              - op: add
+                path: /spec/template/metadata/labels/projectId
+                value: project_4de093d2-9758-48e4-b22f-03a8294991ab
+              - op: add
+                path: /spec/template/metadata/labels/applicationId
+                value: app_91115f33-a4c9-437e-8434-946f83be0115
+              - op: add
+                path: /spec/template/metadata/labels/environmentId
+                value: env_755b27a9-f0ca-48e7-840d-5a792dc4e5b0
+              - op: add
+                path: /spec/template/metadata/labels/version
+                value: v1.0.0
+          - target:
+              group: batch
+              version: v1
+              kind: CronJob
+              name: new-helm-qa-v1-0-0
+            patch: |
+              - op: add
+                path: /spec/jobTemplate/metadata/labels/organizationId
+                value: org_6de1b366-9da6-4d55-b363-f5a2c4382016
+              - op: add
+                path: /spec/jobTemplate/metadata/labels/projectId
+                value: project_4de093d2-9758-48e4-b22f-03a8294991ab
+              - op: add
+                path: /spec/jobTemplate/metadata/labels/applicationId
+                value: app_91115f33-a4c9-437e-8434-946f83be0115
+              - op: add
+                path: /spec/jobTemplate/metadata/labels/environmentId
+                value: env_755b27a9-f0ca-48e7-840d-5a792dc4e5b0
+              - op: add
+                path: /spec/jobTemplate/metadata/labels/version
+                value: v1.0.0
+          - target:
+              group: batch
+              version: v1
+              kind: CronJob
+              name: new-helm-qa-v1-0-0
+            patch: |
+              - op: add
+                path: /spec/jobTemplate/spec/template/metadata/labels/organizationId
+                value: org_6de1b366-9da6-4d55-b363-f5a2c4382016
+              - op: add
+                path: /spec/jobTemplate/spec/template/metadata/labels/projectId
+                value: project_4de093d2-9758-48e4-b22f-03a8294991ab
+              - op: add
+                path: /spec/jobTemplate/spec/template/metadata/labels/applicationId
+                value: app_91115f33-a4c9-437e-8434-946f83be0115
+              - op: add
+                path: /spec/jobTemplate/spec/template/metadata/labels/environmentId
+                value: env_755b27a9-f0ca-48e7-840d-5a792dc4e5b0
+              - op: add
+                path: /spec/jobTemplate/spec/template/metadata/labels/version
+                value: v1.0.0
+          - target:
+              group: apps
+              version: v1
+              kind: StatefulSet
+              name: new-helm-qa-v1-0-0
+            patch: |
+              - op: add
+                path: /spec/template/metadata/labels/organizationId
+                value: org_6de1b366-9da6-4d55-b363-f5a2c4382016
+              - op: add
+                path: /spec/template/metadata/labels/projectId
+                value: project_4de093d2-9758-48e4-b22f-03a8294991ab
+              - op: add
+                path: /spec/template/metadata/labels/applicationId
+                value: app_91115f33-a4c9-437e-8434-946f83be0115
+              - op: add
+                path: /spec/template/metadata/labels/environmentId
+                value: env_755b27a9-f0ca-48e7-840d-5a792dc4e5b0
+              - op: add
+                path: /spec/template/metadata/labels/version
+                value: v1.0.0
