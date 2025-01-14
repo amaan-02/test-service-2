@@ -8,7 +8,7 @@ metadata:
         path: skyu-app-transformer
 spec:
   applicationContainers:
-    - imageTag: c6c64dbb8783aaa9db5b2b94f2bd15ff55e9cbea
+    - imageTag: 23745dbb8b6bb85eaa60c807c7e5e6bafb60496f
       cpuRequestMili: 100
       cpuLimitMili: 150
       memoryRequestMb: 350
@@ -24,10 +24,10 @@ spec:
       imagePullSecretName: imagepull-docker
       credentialId: credential_c58a7f7e-bc53-4df0-874a-ee901eea38c3
       commitDetails:
-        commitHash: c6c64dbb8783aaa9db5b2b94f2bd15ff55e9cbea
+        commitHash: 23745dbb8b6bb85eaa60c807c7e5e6bafb60496f
         commitAvatar: https://github.com/skyu-v2-dev[bot].png
-        commitTime: '2025-01-14T14:33:02Z'
-        commitMessage: Initiate new-helm-qa application
+        commitTime: '2025-01-14T14:35:29Z'
+        commitMessage: Deploy pipeline-run to dev
         commitUser: skyu-v2-dev[bot]
   minReplicas: 1
   maxReplicas: 1
