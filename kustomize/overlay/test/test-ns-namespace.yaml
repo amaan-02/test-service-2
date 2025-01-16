@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: test-ns
+  labels:
+    environmentId: env_b0996e03-1c10-4a79-b13e-ca61ac2b1e6e
+    projectId: project_6fa544f1-ae5e-4fbd-b7b9-85cc84824c03
+    projectName: skyu-ui-automation
+    environmentName: test
+    organizationId: org_6de1b366-9da6-4d55-b363-f5a2c4382016
