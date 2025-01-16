@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test2-v1-0-0
+  labels:
+    app: test2-v1-0-0
+    version: v1.0.0
+    organizationId: org_6de1b366-9da6-4d55-b363-f5a2c4382016
+    projectId: project_6fa544f1-ae5e-4fbd-b7b9-85cc84824c03
+  annotations:
+    reloader.stakater.com/auto: 'true'
+spec:
+  selector:
+    matchLabels:
+      app: test2-v1-0-0
+  template:
+    metadata:
+      labels:
+        app: test2-v1-0-0
+        version: v1.0.0
+        organizationId: org_6de1b366-9da6-4d55-b363-f5a2c4382016
+        projectId: project_6fa544f1-ae5e-4fbd-b7b9-85cc84824c03
