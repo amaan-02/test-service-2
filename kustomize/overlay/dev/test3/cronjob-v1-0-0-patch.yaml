@@ -1,0 +1,32 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  annotations:
+    reloader.stakater.com/auto: 'true'
+  labels:
+    organizationId: org_6de1b366-9da6-4d55-b363-f5a2c4382016
+    projectId: project_6fa544f1-ae5e-4fbd-b7b9-85cc84824c03
+    applicationId: app_0e2dfec8-f506-4906-ac7f-e0cd8d33f002
+    version: v1.0.0
+    environmentId: env_9340452c-1583-4411-b10e-ff262e6828f8
+  name: test3-v1-0-0
+spec:
+  successfulJobsHistoryLimit: 10
+  jobTemplate:
+    metadata:
+      annotations: {}
+      labels:
+        organizationId: org_6de1b366-9da6-4d55-b363-f5a2c4382016
+        projectId: project_6fa544f1-ae5e-4fbd-b7b9-85cc84824c03
+        applicationId: app_0e2dfec8-f506-4906-ac7f-e0cd8d33f002
+        version: v1.0.0
+        environmentId: env_9340452c-1583-4411-b10e-ff262e6828f8
+    spec:
+      template:
+        metadata:
+          labels:
+            organizationId: org_6de1b366-9da6-4d55-b363-f5a2c4382016
+            projectId: project_6fa544f1-ae5e-4fbd-b7b9-85cc84824c03
+            applicationId: app_0e2dfec8-f506-4906-ac7f-e0cd8d33f002
+            version: v1.0.0
+            environmentId: env_9340452c-1583-4411-b10e-ff262e6828f8
